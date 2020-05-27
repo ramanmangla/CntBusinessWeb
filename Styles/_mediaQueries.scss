@@ -1,0 +1,152 @@
+@media screen and (max-width: 1120px) {
+  .bannerImage {
+    left: 35%;
+    min-width: 65%;
+  }
+
+  .navLinks {
+    a {
+      padding: 7px;
+      margin: 7px;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .bannerImage {
+    left: 32%;
+    min-width: 68%;
+  }
+
+  .navLinks {
+    a {
+      padding: 4px;
+      margin: 6px;
+    }
+  }
+}
+
+// @media screen and (max-width: 1000px) {
+//   .responsiveNavLink2 {
+//     color: $matt-grey !important;
+//   }
+// }
+
+@media screen and (max-width: 880px) {
+  .navLinks {
+    position: fixed;
+    width: 200px;
+    height: 100vh;
+    right: -200px;
+    top: 0px;
+    background: $darker-blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transition: 0.5s ease;
+    padding-top: 50px;
+    z-index: 15;
+    border-left: 1px solid $color-border;
+    box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.25);
+  }
+
+  .navLinks {
+    a {
+      padding: 10px;
+      margin: 10px;
+    }
+  }
+
+  .bannerImage {
+    left: 40%;
+    min-width: 60%;
+  }
+
+  #navIcon {
+    display: block;
+  }
+
+  #closeNav {
+    display: inline-block;
+  }
+
+  .image,
+  .experiences .image {
+    display: none;
+  }
+
+  .leftColumn {
+    width: 100%;
+    max-width: none;
+  }
+
+  .description {
+    padding: 17px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  header {
+    padding: 0 25px;
+    height: 60px;
+  }
+
+  #logo {
+    margin: 0;
+  }
+
+  .page {
+    font-weight: 300;
+    // min-height: calc(100vh - 30px);
+  }
+
+  // .container {
+  // min-height: calc(100vh - 30px);
+  // }
+
+  // .bannerContent {
+  //   h1 {
+  //     font-size: 1.3em;
+  //   }
+  // }
+
+  .experiences .description {
+    padding: 7%;
+  }
+
+  .project {
+    height: 250px;
+
+    p {
+      padding-right: 30px;
+    }
+  }
+}
+//   footer {
+//     .mediaLinks {
+//       position: relative;
+//       flex-direction: row;
+//       width: 160px;
+//       margin: 5px;
+//       margin-bottom: 15px;
+//       right: 0;
+
+//       a {
+//         margin: 0;
+//       }
+//     }
+//   }
+// }
+
+@media screen and (max-width: 360px) {
+  .container {
+    margin: 50px auto;
+  }
+
+  // .bannerContent {
+  //   h1 {
+  //     font-size: 1.1em;
+  //   }
+  // }
+}

@@ -1,0 +1,787 @@
+// CSS Reset
+@import "reset";
+
+//******************************
+// 		SCSS Variables
+//******************************
+
+$dark-blue: #0d1f3a;
+$sky-blue: #47cff9;
+$turquoise: #64ffda;
+$darker-blue: #09172c;
+$grey: #757e98;
+$midnight-blue: #112c4c;
+
+$white: #ffffff;
+$purple: #8b26c2;
+$matt-grey: #222;
+$blue: #13649f;
+
+$color-background: $white;
+$color-text: $matt-grey;
+$color-button-border: $blue;
+$color-highlight: $purple;
+$color-navlinks: $white;
+
+$color-heading: $turquoise;
+$color-loading: $darker-blue;
+$color-border: $midnight-blue;
+$color-medialinks: $sky-blue;
+$color-bullets: $grey;
+$color-hover: $white;
+
+/******************************
+		Base Properties
+*******************************/
+
+html {
+  /* Fluid typography scaling over responsive*/
+  /* Max root size = 16px, min root size = 10px*/
+  /* Max viewport width = 1400px, min width = 320px*/
+  font-size: calc(10px + (16 - 10) * ((100vw - 320px) / (1400 - 320)));
+}
+
+body {
+  /*Overscroll-behavior eliminates scroll bounce*/
+  /*overscroll-behavior: none;*/
+  background: $color-background;
+  margin: 0;
+  // overflow: hidden;
+  transition: 1s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: 0.5s ease;
+  font: inherit;
+  text-align: center;
+  line-height: 1.4em;
+}
+
+a:hover {
+  color: $color-hover !important;
+}
+
+a:visited {
+  color: inherit;
+}
+
+.page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: $color-background;
+  font-family: "Roboto";
+  font-size: 0.95rem;
+  font-weight: 200;
+  color: $color-text;
+  overflow-x: hidden;
+  // padding: 0px 40px;
+}
+
+.container {
+  /*Max-width so that container doesn't stretch too much*/
+  /*And to set set margin auto for centering horizontally*/
+  max-width: 1000px;
+  // min-height: 100vh;
+  width: 88%;
+  margin: auto;
+  min-height: 100vh;
+  /*Flex box to vertically center text div*/
+  /*And left align the content*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /*Parent font size = 2.5 * 16 (root) = 40px*/
+  font-size: 2.5rem;
+  position: relative;
+  z-index: 5;
+
+  > h2 {
+    width: 100%;
+    margin-top: 0.25em;
+    margin-bottom: 1.5em;
+    font-size: 0.75em;
+    font-weight: 500;
+  }
+}
+
+.contentContainer {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid $color-border;
+
+  p {
+    font-size: 0.47em;
+    color: $color-text;
+    line-height: 1.4em;
+    margin-bottom: 20px;
+  }
+}
+
+.leftColumn {
+  width: 60%;
+  max-width: 480px;
+}
+
+.highlight {
+  color: $color-highlight;
+  // font-weight: 400;
+}
+
+.image {
+  width: 200px;
+  margin-top: 0px;
+  margin-left: 50px;
+  height: 250px;
+  border: 1px solid $turquoise;
+
+  img {
+    width: 100%;
+  }
+}
+
+li,
+p {
+  letter-spacing: 0.2px;
+}
+
+.activeLink {
+  color: #ffffff;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.7em 1.3em !important;
+  font-family: "Roboto";
+  font-size: 0.4em;
+  font-weight: 300;
+  border: 2px solid $color-button-border;
+  border-radius: 45px;
+  // color: $turquoise !important;
+  margin-top: 3em;
+}
+
+/******************************
+		Load Screen
+*******************************/
+
+@keyframes loaderBar {
+  0% {
+    left: -40px;
+  }
+
+  50% {
+    left: 40px;
+  }
+
+  // 75% {
+  //   left: -60px;
+  // }
+
+  100% {
+    left: -40px;
+  }
+}
+
+// @keyframes loaderScreen {
+//   0% {
+//   	opacity: 1;
+//   }
+
+//   100% {
+//   	opacity: 0;
+//   }
+// }
+
+.loader {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background: $color-loading;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // animation-name: loaderScreen;
+  // animation-duration: 0.6s;
+  // animation-delay: 3s;
+}
+
+.loader {
+  div {
+    position: relative;
+    width: 50px;
+    height: 5px;
+    background: $turquoise;
+    animation-name: loaderBar;
+    animation-duration: 1.4s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+  }
+}
+
+/******************************
+			Header
+*******************************/
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  padding: 0 60px;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Raleway";
+  font-size: 15px;
+  font-weight: 300;
+  transition: 0.5s ease;
+}
+
+header > nav {
+  display: flex;
+  /*Main axis*/
+  justify-content: space-between;
+  /*Align items acts on the cross axis*/
+  align-items: center;
+  width: 100%;
+}
+
+#logo {
+  /*height: 35px;*/
+  /*Left Margin = a padding + right margin*/
+  // margin-left: 25px;
+  // width: 100%;
+  display: inline-block;
+  margin: 10px;
+
+  img {
+    width: 4.5rem;
+  }
+}
+
+.navLinks {
+  a {
+    padding: 10px;
+    margin: 10px;
+    color: $color-navlinks;
+  }
+}
+
+#navIcon {
+  width: 25px;
+  padding: 3px;
+  background: #ffffff;
+  border-radius: 4px;
+  display: none;
+}
+
+#closeNav {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  display: none;
+  font-size: 1.4em;
+  color: $white;
+}
+
+.hideHeader {
+  top: -100px;
+}
+
+.shadowHeader {
+  box-shadow: 0px -4px 14px -1px rgba(0, 0, 0, 0.6);
+}
+
+// /******************************
+// 		Media Links
+// *******************************/
+
+// .mediaLinks {
+//   position: fixed;
+//   z-index: 8;
+//   bottom: 0;
+//   right: 4%;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   align-items: center;
+//   margin-bottom: 80px;
+
+//   > a {
+//     display: inline-block;
+//     margin: 10px 0;
+
+//     svg {
+//       fill: $color-medialinks;
+//       transition: fill 1s;
+
+//       :hover {
+//         fill: #ffffff;
+//       }
+//     }
+
+//     i {
+//       font-size: 2em;
+//       color: $color-medialinks;
+//     }
+//   }
+// }
+
+/******************************
+			Banner
+*******************************/
+
+.bannerImage {
+  position: absolute;
+  left: 40%;
+  min-width: 60%;
+  top: 0;
+  height: 100vh;
+  z-index: 3;
+}
+
+.bannerContent {
+  position: relative;
+  z-index: 6;
+  margin-bottom: 15px;
+  align-self: flex-start;
+
+  h1,
+  p,
+  h3 {
+    text-align: left;
+    margin: 0;
+  }
+
+  h3,
+  h1 {
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    font-size: 0.6em;
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: 1.05em;
+    margin-top: 0.5em;
+    white-space: nowrap;
+  }
+
+  p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 0.5em;
+    margin-top: 1.6em;
+    line-height: 126%;
+  }
+}
+
+.links {
+  margin-top: 1.1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    line-height: 0;
+    margin: 0 0.2em;
+    width: 0.8em;
+    height: 0.8em;
+    background: $color-medialinks;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+
+  a:hover {
+    background: $turquoise;
+  }
+
+  i {
+    font-size: 0.5em;
+    color: $color-background;
+  }
+
+  // GitHub icon styling
+  .githubLink {
+    background: none;
+  }
+
+  .githubLink:hover {
+    background: none;
+  }
+
+  .fa-github {
+    font-size: 0.82em;
+    color: $color-medialinks;
+    transition: 0.5s ease;
+  }
+
+  .fa-github:hover {
+    color: $turquoise;
+  }
+}
+
+.chevron-down {
+  position: absolute;
+  bottom: 10vh;
+  font-size: 0.8em;
+  color: $white;
+  z-index: 9;
+}
+
+/******************************
+			About
+*******************************/
+
+#About {
+  ul {
+    width: 95%;
+    margin-top: 10px;
+    font-size: 0.38em;
+    color: $color-text;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    li {
+      position: relative;
+      margin: 5px;
+      padding-left: 0.8em;
+      line-height: 1.2em;
+    }
+
+    li:before {
+      content: "> ";
+      color: $color-bullets;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  h4 {
+    font-size: 0.48em;
+    font-weight: 300;
+  }
+
+  .contentContainer {
+    padding-bottom: 0.5em;
+  }
+}
+
+/******************************
+		Experiences
+*******************************/
+
+.experiences {
+  // display: block;
+  background: rgba(0, 0, 0, 0.15);
+  flex-direction: column;
+  justify-content: flex-start;
+  border: 1px solid $color-border;
+  box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.25);
+
+  nav {
+    width: 100%;
+    font-size: 0.45em;
+    color: $color-navlinks;
+    border-bottom: 1px solid $color-border;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    a {
+      position: relative;
+      padding: 15px 10px;
+    }
+  }
+
+  > div {
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+
+  .description {
+    min-width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px 50px;
+  }
+
+  h3 {
+    font-size: 0.6em;
+    font-family: "Overpass";
+    font-weight: 200;
+  }
+
+  h4 {
+    margin-top: 0.27em;
+    font-family: "Overpass";
+    font-size: 0.48em;
+    font-weight: 200;
+    color: $sky-blue;
+  }
+
+  h5 {
+    margin-top: 0.4em;
+    font-family: "Overpass";
+    font-size: 0.35em;
+    font-weight: 200;
+    color: $sky-blue;
+  }
+
+  ul {
+    font-size: 0.42em;
+    color: $color-text;
+    line-height: 1.5em;
+    margin-top: 20px;
+
+    li {
+      position: relative;
+      margin-bottom: 7px;
+      padding-left: 0.8em;
+      line-height: 1.65em;
+    }
+
+    li:before {
+      content: "> ";
+      color: $color-bullets;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  .image {
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    height: 200px;
+  }
+}
+
+.activeExperience {
+  color: #ffffff;
+  //   border-bottom: 2px solid $turquoise;
+}
+
+.activeExperience:after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: $turquoise;
+}
+/******************************
+			Projects
+*******************************/
+
+#Projects {
+  .container {
+    min-height: 100vh;
+    padding: 40px 0;
+
+    > p {
+      margin-top: 2.2em;
+      font-size: 0.5em;
+      color: $color-text;
+      text-align: center;
+      line-height: 1.4em;
+
+      > a {
+        color: $turquoise;
+      }
+
+      > a:hover {
+        color: $sky-blue !important;
+      }
+    }
+  }
+
+  .contentContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    position: relative;
+    grid-gap: 30px 30px;
+    border: 0;
+  }
+
+  a {
+    line-height: 0;
+  }
+}
+
+.project {
+  position: relative;
+  border: 1px solid $color-border;
+  transition: 1s;
+  width: 100%;
+  height: 325px;
+  min-height: 200px;
+  margin: auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.25);
+
+  h3 {
+    font-size: 0.6em;
+    font-family: "Overpass";
+    color: $color-heading;
+  }
+
+  ul {
+    max-width: 80%;
+    margin-top: 0.4em;
+    display: flex;
+    font-size: 0.35em;
+    color: $color-navlinks;
+
+    li {
+      margin-right: 1em;
+      white-space: nowrap;
+    }
+  }
+
+  p {
+    font-size: 0.4em;
+    line-height: 1.6em;
+    margin-top: 1.7em;
+    text-align: left;
+  }
+
+  > div {
+    width: 100%;
+  }
+}
+
+.projectTech {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  .fa-github {
+    font-size: 0.75em;
+    color: $grey;
+    transition: 0.5s ease;
+  }
+
+  .fa-github:hover {
+    color: $turquoise;
+  }
+}
+
+/******************************
+			Contact
+*******************************/
+
+#Contact {
+  h3 {
+    // font-family: "Roboto Mono";
+    font-size: 0.55em;
+    color: $white;
+    line-height: 1.4em;
+  }
+
+  h2 {
+    font-size: 1.1em;
+    font-family: "Overpass";
+    font-weight: 200;
+    margin-top: 0.6em;
+  }
+
+  .bannerContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .links {
+    margin-top: 0.9em;
+
+    a {
+      margin: 0 0.2em;
+      width: 0.9em;
+      height: 0.9em;
+    }
+
+    i {
+      font-size: 0.6em;
+    }
+
+    .fa-github {
+      font-size: 0.95em;
+    }
+  }
+}
+
+.resume {
+  font: inherit;
+  font-size: 0.9em;
+}
+
+/******************************
+			Footer
+*******************************/
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #111111;
+  padding: 15px;
+
+  .personal {
+    font-family: "Roboto Mono";
+    font-weight: 300;
+    color: $grey;
+  }
+
+  a {
+    font-family: "Roboto Mono";
+    margin-top: 6px;
+    color: $grey !important;
+    font-weight: 300;
+    text-decoration: underline;
+  }
+}
+
+@import "mediaQueries";

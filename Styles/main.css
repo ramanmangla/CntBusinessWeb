@@ -1,0 +1,869 @@
+/*CSS Reset*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font: inherit;
+}
+
+/******************************
+		Base Properties
+*******************************/
+html {
+  /* Fluid typography scaling over responsive*/
+  /* Max root size = 16px, min root size = 10px*/
+  /* Max viewport width = 1400px, min width = 320px*/
+  font-size: calc(10px + (16 - 10) * ((100vw - 320px) / (1400 - 320)));
+}
+
+body {
+  /*Overscroll-behavior eliminates scroll bounce*/
+  /*overscroll-behavior: none;*/
+  background: #ffffff;
+  margin: 0;
+  transition: 1s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: 0.5s ease;
+  font: inherit;
+  text-align: center;
+  line-height: 1.4em;
+}
+
+a:hover {
+  color: #ffffff !important;
+}
+
+a:visited {
+  color: inherit;
+}
+
+.page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  font-family: "Roboto";
+  font-size: 0.95rem;
+  font-weight: 200;
+  color: #222;
+  overflow-x: hidden;
+}
+
+.container {
+  /*Max-width so that container doesn't stretch too much*/
+  /*And to set set margin auto for centering horizontally*/
+  max-width: 1000px;
+  width: 88%;
+  margin: auto;
+  min-height: 100vh;
+  /*Flex box to vertically center text div*/
+  /*And left align the content*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /*Parent font size = 2.5 * 16 (root) = 40px*/
+  font-size: 2.5rem;
+  position: relative;
+  z-index: 5;
+}
+.container > h2 {
+  width: 100%;
+  margin-top: 0.25em;
+  margin-bottom: 1.5em;
+  font-size: 0.75em;
+  font-weight: 500;
+}
+
+.contentContainer {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid #112c4c;
+}
+.contentContainer p {
+  font-size: 0.47em;
+  color: #222;
+  line-height: 1.4em;
+  margin-bottom: 20px;
+}
+
+.leftColumn {
+  width: 60%;
+  max-width: 480px;
+}
+
+.highlight {
+  color: #8b26c2;
+}
+
+.image {
+  width: 200px;
+  margin-top: 0px;
+  margin-left: 50px;
+  height: 250px;
+  border: 1px solid #64ffda;
+}
+.image img {
+  width: 100%;
+}
+
+li,
+p {
+  letter-spacing: 0.2px;
+}
+
+.activeLink {
+  color: #ffffff;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.7em 1.3em !important;
+  font-family: "Roboto";
+  font-size: 0.4em;
+  font-weight: 300;
+  border: 2px solid #13649f;
+  border-radius: 45px;
+  margin-top: 3em;
+}
+
+/******************************
+		Load Screen
+*******************************/
+@keyframes loaderBar {
+  0% {
+    left: -40px;
+  }
+  50% {
+    left: 40px;
+  }
+  100% {
+    left: -40px;
+  }
+}
+.loader {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background: #09172c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader div {
+  position: relative;
+  width: 50px;
+  height: 5px;
+  background: #64ffda;
+  animation-name: loaderBar;
+  animation-duration: 1.4s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+/******************************
+			Header
+*******************************/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  padding: 0 60px;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Raleway";
+  font-size: 15px;
+  font-weight: 300;
+  transition: 0.5s ease;
+}
+
+header > nav {
+  display: flex;
+  /*Main axis*/
+  justify-content: space-between;
+  /*Align items acts on the cross axis*/
+  align-items: center;
+  width: 100%;
+}
+
+#logo {
+  /*height: 35px;*/
+  /*Left Margin = a padding + right margin*/
+  display: inline-block;
+  margin: 10px;
+}
+#logo img {
+  width: 4.5rem;
+}
+
+.navLinks a {
+  padding: 10px;
+  margin: 10px;
+  color: #ffffff;
+}
+
+#navIcon {
+  width: 25px;
+  padding: 3px;
+  background: #ffffff;
+  border-radius: 4px;
+  display: none;
+}
+
+#closeNav {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  display: none;
+  font-size: 1.4em;
+  color: #ffffff;
+}
+
+.hideHeader {
+  top: -100px;
+}
+
+.shadowHeader {
+  box-shadow: 0px -4px 14px -1px rgba(0, 0, 0, 0.6);
+}
+
+/******************************
+			Banner
+*******************************/
+.bannerImage {
+  position: absolute;
+  left: 40%;
+  min-width: 60%;
+  top: 0;
+  height: 100vh;
+  z-index: 3;
+}
+
+.bannerContent {
+  position: relative;
+  z-index: 6;
+  margin-bottom: 15px;
+  align-self: flex-start;
+}
+.bannerContent h1,
+.bannerContent p,
+.bannerContent h3 {
+  text-align: left;
+  margin: 0;
+}
+.bannerContent h3,
+.bannerContent h1 {
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  font-size: 0.6em;
+}
+.bannerContent h1 {
+  font-weight: 700;
+  font-size: 1.05em;
+  margin-top: 0.5em;
+  white-space: nowrap;
+}
+.bannerContent p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 0.5em;
+  margin-top: 1.6em;
+  line-height: 126%;
+}
+
+.links {
+  margin-top: 1.1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.links a {
+  line-height: 0;
+  margin: 0 0.2em;
+  width: 0.8em;
+  height: 0.8em;
+  background: #47cff9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.links a:hover {
+  background: #64ffda;
+}
+.links i {
+  font-size: 0.5em;
+  color: #ffffff;
+}
+.links .githubLink {
+  background: none;
+}
+.links .githubLink:hover {
+  background: none;
+}
+.links .fa-github {
+  font-size: 0.82em;
+  color: #47cff9;
+  transition: 0.5s ease;
+}
+.links .fa-github:hover {
+  color: #64ffda;
+}
+
+.chevron-down {
+  position: absolute;
+  bottom: 10vh;
+  font-size: 0.8em;
+  color: #ffffff;
+  z-index: 9;
+}
+
+/******************************
+			About
+*******************************/
+#About ul {
+  width: 95%;
+  margin-top: 10px;
+  font-size: 0.38em;
+  color: #222;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+#About ul li {
+  position: relative;
+  margin: 5px;
+  padding-left: 0.8em;
+  line-height: 1.2em;
+}
+#About ul li:before {
+  content: "> ";
+  color: #757e98;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#About h4 {
+  font-size: 0.48em;
+  font-weight: 300;
+}
+#About .contentContainer {
+  padding-bottom: 0.5em;
+}
+
+/******************************
+		Experiences
+*******************************/
+.experiences {
+  background: rgba(0, 0, 0, 0.15);
+  flex-direction: column;
+  justify-content: flex-start;
+  border: 1px solid #112c4c;
+  box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.25);
+}
+.experiences nav {
+  width: 100%;
+  font-size: 0.45em;
+  color: #ffffff;
+  border-bottom: 1px solid #112c4c;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.experiences nav a {
+  position: relative;
+  padding: 15px 10px;
+}
+.experiences > div {
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+.experiences .description {
+  min-width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px 50px;
+}
+.experiences h3 {
+  font-size: 0.6em;
+  font-family: "Overpass";
+  font-weight: 200;
+}
+.experiences h4 {
+  margin-top: 0.27em;
+  font-family: "Overpass";
+  font-size: 0.48em;
+  font-weight: 200;
+  color: #47cff9;
+}
+.experiences h5 {
+  margin-top: 0.4em;
+  font-family: "Overpass";
+  font-size: 0.35em;
+  font-weight: 200;
+  color: #47cff9;
+}
+.experiences ul {
+  font-size: 0.42em;
+  color: #222;
+  line-height: 1.5em;
+  margin-top: 20px;
+}
+.experiences ul li {
+  position: relative;
+  margin-bottom: 7px;
+  padding-left: 0.8em;
+  line-height: 1.65em;
+}
+.experiences ul li:before {
+  content: "> ";
+  color: #757e98;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.experiences .image {
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 200px;
+}
+
+.activeExperience {
+  color: #ffffff;
+}
+
+.activeExperience:after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: #64ffda;
+}
+
+/******************************
+			Projects
+*******************************/
+#Projects .container {
+  min-height: 100vh;
+  padding: 40px 0;
+}
+#Projects .container > p {
+  margin-top: 2.2em;
+  font-size: 0.5em;
+  color: #222;
+  text-align: center;
+  line-height: 1.4em;
+}
+#Projects .container > p > a {
+  color: #64ffda;
+}
+#Projects .container > p > a:hover {
+  color: #47cff9 !important;
+}
+#Projects .contentContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  position: relative;
+  grid-gap: 30px 30px;
+  border: 0;
+}
+#Projects a {
+  line-height: 0;
+}
+
+.project {
+  position: relative;
+  border: 1px solid #112c4c;
+  transition: 1s;
+  width: 100%;
+  height: 325px;
+  min-height: 200px;
+  margin: auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.25);
+}
+.project h3 {
+  font-size: 0.6em;
+  font-family: "Overpass";
+  color: #64ffda;
+}
+.project ul {
+  max-width: 80%;
+  margin-top: 0.4em;
+  display: flex;
+  font-size: 0.35em;
+  color: #ffffff;
+}
+.project ul li {
+  margin-right: 1em;
+  white-space: nowrap;
+}
+.project p {
+  font-size: 0.4em;
+  line-height: 1.6em;
+  margin-top: 1.7em;
+  text-align: left;
+}
+.project > div {
+  width: 100%;
+}
+
+.projectTech {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.projectTech .fa-github {
+  font-size: 0.75em;
+  color: #757e98;
+  transition: 0.5s ease;
+}
+.projectTech .fa-github:hover {
+  color: #64ffda;
+}
+
+/******************************
+			Contact
+*******************************/
+#Contact h3 {
+  font-size: 0.55em;
+  color: #ffffff;
+  line-height: 1.4em;
+}
+#Contact h2 {
+  font-size: 1.1em;
+  font-family: "Overpass";
+  font-weight: 200;
+  margin-top: 0.6em;
+}
+#Contact .bannerContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#Contact .links {
+  margin-top: 0.9em;
+}
+#Contact .links a {
+  margin: 0 0.2em;
+  width: 0.9em;
+  height: 0.9em;
+}
+#Contact .links i {
+  font-size: 0.6em;
+}
+#Contact .links .fa-github {
+  font-size: 0.95em;
+}
+
+.resume {
+  font: inherit;
+  font-size: 0.9em;
+}
+
+/******************************
+			Footer
+*******************************/
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #111111;
+  padding: 15px;
+}
+footer .personal {
+  font-family: "Roboto Mono";
+  font-weight: 300;
+  color: #757e98;
+}
+footer a {
+  font-family: "Roboto Mono";
+  margin-top: 6px;
+  color: #757e98 !important;
+  font-weight: 300;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 1120px) {
+  .bannerImage {
+    left: 35%;
+    min-width: 65%;
+  }
+
+  .navLinks a {
+    padding: 7px;
+    margin: 7px;
+  }
+}
+@media screen and (max-width: 960px) {
+  .bannerImage {
+    left: 32%;
+    min-width: 68%;
+  }
+
+  .navLinks a {
+    padding: 4px;
+    margin: 6px;
+  }
+}
+@media screen and (max-width: 880px) {
+  .navLinks {
+    position: fixed;
+    width: 200px;
+    height: 100vh;
+    right: -200px;
+    top: 0px;
+    background: #09172c;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transition: 0.5s ease;
+    padding-top: 50px;
+    z-index: 15;
+    border-left: 1px solid #112c4c;
+    box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.25);
+  }
+
+  .navLinks a {
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .bannerImage {
+    left: 40%;
+    min-width: 60%;
+  }
+
+  #navIcon {
+    display: block;
+  }
+
+  #closeNav {
+    display: inline-block;
+  }
+
+  .image,
+.experiences .image {
+    display: none;
+  }
+
+  .leftColumn {
+    width: 100%;
+    max-width: none;
+  }
+
+  .description {
+    padding: 17px;
+  }
+}
+@media screen and (max-width: 620px) {
+  header {
+    padding: 0 25px;
+    height: 60px;
+  }
+
+  #logo {
+    margin: 0;
+  }
+
+  .page {
+    font-weight: 300;
+  }
+
+  .experiences .description {
+    padding: 7%;
+  }
+
+  .project {
+    height: 250px;
+  }
+  .project p {
+    padding-right: 30px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .container {
+    margin: 50px auto;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
