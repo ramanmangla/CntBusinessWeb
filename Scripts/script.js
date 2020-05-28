@@ -23,7 +23,7 @@ $(document).ready(function () {
   var lastScroll = 0;
 
   $(window).scroll(function () {
-    if ($(window).scrollTop() > 220) {
+    if ($(window).scrollTop() > 90) {
       $("header").addClass("shadowHeader");
 
       if ($(window).scrollTop() < lastScroll) {
@@ -116,4 +116,51 @@ $("#navIcon").on("click", function () {
 
 $("#closeNav").on("click", function () {
   $(".navLinks").css("right", "-200px");
+});
+
+$(".carousel-container").slick({
+  infinite: true,
+  speed: 300,
+  slidesToShow: 6,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 1500,
+  arrows: false,
+  draggable: false,
+  swipe: false,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true,
+      },
+    },
+    {
+      breakpoint: 800,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ],
 });

@@ -317,7 +317,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 70px;
   padding: 0 60px;
   z-index: 20;
   display: flex;
@@ -345,6 +345,7 @@ header > nav {
   margin: 10px;
 }
 #logo img {
+  margin-top: 10px;
   width: 4.5rem;
 }
 
@@ -377,6 +378,10 @@ header > nav {
 
 .shadowHeader {
   box-shadow: 0px -4px 14px -1px rgba(0, 0, 0, 0.6);
+  background: #ffffff;
+}
+.shadowHeader a {
+  color: #8b26c2;
 }
 
 /******************************
@@ -387,7 +392,7 @@ header > nav {
   left: 40%;
   min-width: 60%;
   top: 0;
-  height: 100vh;
+  height: 100%;
   z-index: 3;
 }
 
@@ -468,6 +473,40 @@ header > nav {
   font-size: 0.8em;
   color: #ffffff;
   z-index: 9;
+}
+
+/******************************
+        Partners - banner
+*******************************/
+.partner-banner {
+  width: 100%;
+  position: relative;
+  padding: 0 3%;
+  border-top: 2px solid #e5e5e5;
+  border-bottom: 2px solid #e5e5e5;
+  z-index: 4;
+  box-shadow: 0 4px 6px 0px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-container {
+  width: 100%;
+  border-left: 4px solid #e5e5e5;
+  border-right: 4px solid #e5e5e5;
+  margin: 30px 0;
+}
+
+.slide {
+  margin: 0 1.1%;
+}
+
+.partner-image {
+  width: 100%;
+  filter: grayscale(100%);
+  opacity: 0.24;
+}
+
+.slick-dots li button {
+  display: none;
 }
 
 /******************************
@@ -847,6 +886,11 @@ footer a {
 
   .page {
     font-weight: 300;
+    min-height: calc(100vh - 30px);
+  }
+
+  .container {
+    min-height: calc(100vh - 30px);
   }
 
   .experiences .description {
