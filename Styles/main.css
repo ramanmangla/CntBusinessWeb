@@ -387,6 +387,25 @@ header > nav {
 /******************************
 			Banner
 *******************************/
+#Home .contentContainer {
+  align-items: center;
+  margin-bottom: 0;
+  border: 0;
+}
+#Home .contentContainer img {
+  width: 110%;
+  position: relative;
+  left: 12%;
+}
+
+.right-col-banner {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+
 .bannerImage {
   position: absolute;
   left: 40%;
@@ -821,6 +840,11 @@ footer a {
   .navLinks a {
     padding: 4px;
     margin: 6px;
+  }
+
+  #Home .contentContainer img {
+    width: 120%;
+    left: 0%;
   }
 }
 @media screen and (max-width: 880px) {
