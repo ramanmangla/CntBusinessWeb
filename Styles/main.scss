@@ -17,12 +17,15 @@ $white: #ffffff;
 $purple: #8b26c2;
 $matt-grey: #222;
 $blue: #13649f;
+$grey: #777;
 
 $color-background: $white;
 $color-text: $matt-grey;
 $color-button-border: $blue;
 $color-highlight: $purple;
 $color-navlinks: $white;
+$color-bullets: $matt-grey;
+$color-highlight-blue: $blue;
 
 $color-heading: $turquoise;
 $color-loading: $darker-blue;
@@ -92,7 +95,7 @@ a:visited {
   /*Flex box to vertically center text div*/
   /*And left align the content*/
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   /*Parent font size = 2.5 * 16 (root) = 40px*/
@@ -112,11 +115,14 @@ a:visited {
 .contentContainer {
   position: relative;
   width: 100%;
-  min-height: 400px;
+  // min-height: 400px;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  border-bottom: 1px solid $color-border;
+  justify-content: center;
+  align-items: center;
+  // border-bottom: 1px solid $color-border;
+  padding-top: 10%;
+  padding-bottom: 2%;
+  flex-wrap: wrap;
 
   p {
     font-size: 0.47em;
@@ -126,10 +132,65 @@ a:visited {
   }
 }
 
-.leftColumn {
-  width: 60%;
-  max-width: 480px;
+.bigColumn {
+  max-width: 50%;
+  margin: 20px;
+  margin-top: 0;
+  // max-width: 480px;
+  text-align: justify;
+  // margin: 4%;
 }
+
+.smallColumn {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // margin: 4%;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  position: relative;
+  grid-gap: 2px 2px;
+  background: $white;
+  // width: 80%;
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  padding: 5px;
+
+  > div {
+    background: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0.4em 1em;
+
+    h5 {
+      font-size: 1.1em;
+      font-family: "Source Sans Pro", sans-serif;
+      font-weight: 700;
+    }
+
+    h6 {
+      margin-top: 0.4em;
+      font-size: 0.4em;
+      text-align: center;
+      line-height: 119%;
+    }
+
+    .info-smaller-font {
+      font-size: 0.9em;
+    }
+  }
+}
+
+// .border-right-bottom {
+//   border-right: 1px solid $off-white;
+//   border-bottom: 1px solid $off-white;
+// }
 
 .highlight {
   color: $color-highlight;
@@ -169,8 +230,51 @@ p {
   margin-top: 3em;
 }
 
+// .content-row {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+// }
+
+.flex-center {
+  justify-content: center;
+}
+
+.wrap-rev {
+  flex-wrap: wrap-reverse;
+  padding-top: 7%;
+}
+
+.page-heading {
+  h2 {
+    font-size: 1em;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 25%;
+  }
+
+  p {
+    font-size: 0.35em;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 0.9em;
+    color: $grey;
+    text-transform: uppercase;
+  }
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.color-highlight-blue {
+  color: $color-highlight-blue;
+}
+
 /******************************
-		Load Screen
+		      Load Screen
 *******************************/
 
 @keyframes loaderBar {
@@ -231,7 +335,7 @@ p {
 }
 
 /******************************
-			Header
+			      Header
 *******************************/
 
 header {
@@ -288,6 +392,7 @@ header > nav {
   background: #ffffff;
   border-radius: 4px;
   display: none;
+  transition: 0.5s ease;
 }
 
 #closeNav {
@@ -308,47 +413,17 @@ header > nav {
   background: $white;
 
   a {
-    color: $purple;
+    color: $white;
+    // font-weight: 400;
+  }
+
+  #navIcon {
+    background: $purple;
   }
 }
 
-// /******************************
-// 		Media Links
-// *******************************/
-
-// .mediaLinks {
-//   position: fixed;
-//   z-index: 8;
-//   bottom: 0;
-//   right: 4%;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-between;
-//   align-items: center;
-//   margin-bottom: 80px;
-
-//   > a {
-//     display: inline-block;
-//     margin: 10px 0;
-
-//     svg {
-//       fill: $color-medialinks;
-//       transition: fill 1s;
-
-//       :hover {
-//         fill: #ffffff;
-//       }
-//     }
-
-//     i {
-//       font-size: 2em;
-//       color: $color-medialinks;
-//     }
-//   }
-// }
-
 /******************************
-			Banner
+			      Banner
 *******************************/
 
 #Home .contentContainer {
@@ -416,52 +491,52 @@ header > nav {
   }
 }
 
-.links {
-  margin-top: 1.1em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+// .links {
+//   margin-top: 1.1em;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
 
-  a {
-    line-height: 0;
-    margin: 0 0.2em;
-    width: 0.8em;
-    height: 0.8em;
-    background: $color-medialinks;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-  }
+//   a {
+//     line-height: 0;
+//     margin: 0 0.2em;
+//     width: 0.8em;
+//     height: 0.8em;
+//     background: $color-medialinks;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     border-radius: 50%;
+//   }
 
-  a:hover {
-    background: $turquoise;
-  }
+//   a:hover {
+//     background: $turquoise;
+//   }
 
-  i {
-    font-size: 0.5em;
-    color: $color-background;
-  }
+//   i {
+//     font-size: 0.5em;
+//     color: $color-background;
+//   }
 
-  // GitHub icon styling
-  .githubLink {
-    background: none;
-  }
+//   // GitHub icon styling
+//   .githubLink {
+//     background: none;
+//   }
 
-  .githubLink:hover {
-    background: none;
-  }
+//   .githubLink:hover {
+//     background: none;
+//   }
 
-  .fa-github {
-    font-size: 0.82em;
-    color: $color-medialinks;
-    transition: 0.5s ease;
-  }
+//   .fa-github {
+//     font-size: 0.82em;
+//     color: $color-medialinks;
+//     transition: 0.5s ease;
+//   }
 
-  .fa-github:hover {
-    color: $turquoise;
-  }
-}
+//   .fa-github:hover {
+//     color: $turquoise;
+//   }
+// }
 
 .chevron-down {
   position: absolute;
@@ -511,40 +586,49 @@ header > nav {
 			About
 *******************************/
 
-#About {
-  ul {
-    width: 95%;
-    margin-top: 10px;
-    font-size: 0.38em;
+.about-areas-list {
+  color: $color-text;
+  display: flex;
+  flex-direction: column;
+
+  li {
+    position: relative;
+    margin: 5px;
+    padding-left: 0.8em;
+    line-height: 1.2em;
+    font-size: 0.47em;
+    font-weight: 500;
+  }
+
+  li:before {
+    content: "• ";
     color: $color-text;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-
-    li {
-      position: relative;
-      margin: 5px;
-      padding-left: 0.8em;
-      line-height: 1.2em;
-    }
-
-    li:before {
-      content: "> ";
-      color: $color-bullets;
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
+    position: absolute;
+    left: 0;
+    top: 0;
   }
+}
 
-  h4 {
-    font-size: 0.48em;
-    font-weight: 300;
-  }
+.areas-li-two-div {
+  margin-top: 0 !important;
+}
 
-  .contentContainer {
-    padding-bottom: 0.5em;
+.about-carousel-awards {
+  width: 80%;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  background: #aaa;
+  height: 140px;
+
+  img {
+    width: 50px;
   }
+}
+
+.about-margin-top {
+  margin: 0;
 }
 
 /******************************

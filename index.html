@@ -34,7 +34,7 @@
     <link href="Static/css/all.css" rel="stylesheet" />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;700;800&family=Playfair+Display:wght@700&family=Raleway:wght@300&family=Roboto:wght@300;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;700;800&family=Playfair+Display:wght@700&family=Raleway:wght@300&family=Roboto:wght@300;400;500&family=Source+Sans+Pro:wght@700&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -65,13 +65,14 @@
         <div id="navIcon"></div>
       </nav>
     </header>
+
     <section class="page" id="Home">
       <img
         src="Static/Images/purple-banner.svg"
         alt="Banner Art"
         class="bannerImage"
       />
-      <div class="container">
+      <div class="container flex-center">
         <div class="contentContainer bannerContent">
           <div class="leftColumn">
             <h3>Lorem ipsum dolores sans avec</h3>
@@ -98,6 +99,7 @@
         ></i>
       </div>
     </section>
+
     <section class="partner-banner">
       <div class="carousel-container">
         <div class="slide">
@@ -126,26 +128,94 @@
 
     <section class="page" id="About">
       <div class="container">
-        <h2>About Me</h2>
+        <div class="page-heading">
+          <h2>About Us</h2>
+          <p>Computers Network & Telecom India</p>
+        </div>
+
+        <!-- <h2>About Me</h2> -->
         <div class="contentContainer">
-          <div class="leftColumn">
+          <div class="bigColumn">
             <p>
-              Hello! I'm <span class="highlight">Raman Mangla</span> and I
-              develop applications for the
-              <span class="highlight">web and beyond</span>. I'm passionate
-              about design and development, which I combine to create amazing
-              user experiences in my projects.
+              We are an award winning ISO certified Information Technology
+              company with a mission to provide innovative end to end technology
+              solutions to enterprise customers across a range of industries.
             </p>
+          </div>
+          <div class="smallColumn">
+            <!-- <div class="image">
+              <img src="Static/Images/Personal.jpg" />
+            </div> -->
+            <div class="info-grid">
+              <div>
+                <h5>28</h5>
+                <h6>Years Of<br />Experience</h6>
+              </div>
+              <div>
+                <h5>200+</h5>
+                <h6>Domestic<br />Employees</h6>
+              </div>
+              <div>
+                <h5 class="info-smaller-font">1000+</h5>
+                <h6>Diverse<br />Projects</h6>
+              </div>
+              <div>
+                <h5>100+</h5>
+                <h6>Global<br />Customers</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contentContainer wrap-rev">
+          <div class="smallColumn flex-col">
+            <!-- <div class="image">
+              <img src="Static/Images/Personal.jpg" />
+            </div> -->
+            <div class="about-carousel-awards">
+              <!-- Set Awards image -->
+            </div>
+            <p>Recipient of XYZ Award</p>
+            <a href="#Experience" class="button about-margin-top">
+              Our Awards
+            </a>
+          </div>
+          <div class="bigColumn">
             <p>
-              Currently, I'm a third year undergraduate student at the
-              <span class="highlight">University of Toronto,</span> where I'm
-              pursuing a degree in
-              <span class="highlight">Computer Engineering</span> with a minor
-              in <span class="highlight">Artificial Intelligence</span>. My
-              areas of interest include machine learning and web and software
-              development.
+              Since our incorporation in 1997, we have endeavoured to build
+              enduring relationships with our clients through exceptional
+              support and customized solutions. We have strategically establish
+              ourselves as leaders in various industries including, FMPG and
+              Telecom, in areas like:
             </p>
-            <h4>Technologies:</h4>
+            <ul class="about-areas-list">
+              <div>
+                <li>
+                  <span class="color-highlight-blue">Lorement</span> doloresum
+                  ipsum
+                </li>
+                <li>
+                  <span class="color-highlight-blue">Lorement</span> doloresum
+                  ipsum
+                </li>
+              </div>
+              <div>
+                <li class="areas-li-two-div">
+                  <span class="color-highlight-blue">Lorement</span> doloresum
+                  ipsum
+                </li>
+                <li>
+                  <span class="color-highlight-blue">Lorement</span> doloresum
+                  ipsum
+                </li>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <h4>Technologies:</h4>
             <ul>
               <div>
                 <li>Flask</li>
@@ -166,16 +236,8 @@
                 <li>Adobe Illustrator</li>
                 <li>Adobe InDesign</li>
               </div>
-            </ul>
-          </div>
-          <div>
-            <div class="image">
-              <img src="Static/Images/Personal.jpg" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+            </ul> -->
+
     <section class="page" id="Experience">
       <div class="container">
         <h2>Experience</h2>
