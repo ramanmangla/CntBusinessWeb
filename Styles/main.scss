@@ -76,7 +76,7 @@ a:visited {
   width: 100%;
   min-height: 100vh;
   background: $color-background;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-size: 0.95rem;
   font-weight: 200;
   color: $color-text;
@@ -228,7 +228,7 @@ p {
 .button {
   display: inline-block;
   padding: 0.7em 1.3em !important;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-size: 0.4em;
   font-weight: 300;
   border: 2px solid $color-button-border;
@@ -356,7 +356,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Raleway";
+  font-family: "Raleway", sans-serif;
   font-size: 15px;
   font-weight: 300;
   transition: 0.5s ease;
@@ -1092,13 +1092,13 @@ footer {
   padding: 15px;
 
   .personal {
-    font-family: "Roboto Mono";
+    font-family: "Roboto", sans-serif;
     font-weight: 300;
     color: $grey;
   }
 
   a {
-    font-family: "Roboto Mono";
+    font-family: "Roboto", sans-serif;
     margin-top: 6px;
     color: $grey !important;
     font-weight: 300;
