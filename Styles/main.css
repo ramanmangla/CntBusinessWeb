@@ -148,9 +148,9 @@ h6 {
 *******************************/
 html {
   /* Fluid typography scaling over responsive*/
-  /* Max root size = 16px, min root size = 10px*/
+  /* Max root size = 16px, min root size = 12px*/
   /* Max viewport width = 1400px, min width = 320px*/
-  font-size: calc(10px + (16 - 10) * ((100vw - 320px) / (1400 - 320)));
+  font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1400 - 320)));
 }
 
 body {
@@ -200,13 +200,15 @@ a:visited {
   /*Flex box to vertically center text div*/
   /*And left align the content*/
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   /*Parent font size = 2.5 * 16 (root) = 40px*/
   font-size: 2.5rem;
   position: relative;
   z-index: 5;
+  padding-top: 8%;
+  padding-bottom: 8%;
 }
 .container > h2 {
   width: 100%;
@@ -231,6 +233,11 @@ a:visited {
   color: #222;
   line-height: 1.4em;
   margin-bottom: 20px;
+}
+
+.leftColumn {
+  width: 60%;
+  max-width: 480px;
 }
 
 .bigColumn {
@@ -329,7 +336,6 @@ p {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 700;
   text-align: center;
-  margin-top: 25%;
 }
 .page-heading p {
   font-size: 0.35em;
@@ -460,7 +466,7 @@ header > nav {
   background: #ffffff;
 }
 .shadowHeader a {
-  color: #ffffff;
+  color: #222;
 }
 .shadowHeader #navIcon {
   background: #8b26c2;
@@ -552,9 +558,10 @@ header > nav {
 
 .carousel-container {
   width: 100%;
+  max-width: 1000px;
   border-left: 4px solid #e5e5e5;
   border-right: 4px solid #e5e5e5;
-  margin: 30px 0;
+  margin: 30px auto;
 }
 
 .slide {
@@ -610,6 +617,109 @@ header > nav {
 
 .about-margin-top {
   margin: 0;
+}
+
+/******************************
+		    Mission Divider
+*******************************/
+.mission-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.mission-container p {
+  font-size: 0.7em;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  color: #222;
+  min-width: 250px;
+  text-align: center;
+  line-height: 160%;
+  margin: 1.3em;
+}
+
+.mission-container:after {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  content: "";
+  width: 50%;
+  height: 4px;
+  background: #e5e5e5;
+  border-radius: 20px;
+}
+
+/******************************
+		      Services
+*******************************/
+#Services {
+  background: #222;
+}
+#Services .page-heading h2 {
+  color: #ffffff;
+}
+#Services .contentContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  justify-items: center;
+  align-items: center;
+  row-gap: 35px;
+}
+
+.service {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 250px;
+  color: #ffffff;
+}
+.service img {
+  width: 15%;
+}
+.service > div {
+  font-size: 0.5em;
+  margin-left: 1em;
+}
+.service h3 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+  font-size: 1em;
+}
+.service p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 0.7em;
+  margin-top: 0.7em;
+  line-height: 150%;
+  color: #ffffff;
+}
+
+.services-image {
+  width: 70%;
+  height: 190px;
+  background: #eee;
+}
+
+.service-goals li {
+  display: flex;
+  align-items: center;
+  margin: 0.4em;
+}
+.service-goals li img {
+  width: 32px;
+}
+.service-goals li h4 {
+  color: #ffffff;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 500;
+  font-size: 0.5em;
+  margin-left: 1.3em;
 }
 
 /******************************
@@ -920,6 +1030,10 @@ footer a {
   .navLinks a {
     padding: 10px;
     margin: 10px;
+  }
+
+  .shadowHeader a {
+    color: #ffffff;
   }
 
   .bannerImage {

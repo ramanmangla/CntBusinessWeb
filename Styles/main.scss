@@ -40,9 +40,9 @@ $color-hover: $white;
 
 html {
   /* Fluid typography scaling over responsive*/
-  /* Max root size = 16px, min root size = 10px*/
+  /* Max root size = 16px, min root size = 12px*/
   /* Max viewport width = 1400px, min width = 320px*/
-  font-size: calc(10px + (16 - 10) * ((100vw - 320px) / (1400 - 320)));
+  font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1400 - 320)));
 }
 
 body {
@@ -95,13 +95,15 @@ a:visited {
   /*Flex box to vertically center text div*/
   /*And left align the content*/
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   /*Parent font size = 2.5 * 16 (root) = 40px*/
   font-size: 2.5rem;
   position: relative;
   z-index: 5;
+  padding-top: 8%;
+  padding-bottom: 8%;
 
   > h2 {
     width: 100%;
@@ -130,6 +132,11 @@ a:visited {
     line-height: 1.4em;
     margin-bottom: 20px;
   }
+}
+
+.leftColumn {
+  width: 60%;
+  max-width: 480px;
 }
 
 .bigColumn {
@@ -251,7 +258,7 @@ p {
     font-family: "Source Sans Pro", sans-serif;
     font-weight: 700;
     text-align: center;
-    margin-top: 25%;
+    // margin-top: 25%;
   }
 
   p {
@@ -413,7 +420,7 @@ header > nav {
   background: $white;
 
   a {
-    color: $white;
+    color: $matt-grey;
     // font-weight: 400;
   }
 
@@ -562,9 +569,10 @@ header > nav {
 
 .carousel-container {
   width: 100%;
+  max-width: 1000px;
   border-left: 4px solid $off-white;
   border-right: 4px solid $off-white;
-  margin: 30px 0;
+  margin: 30px auto;
 }
 
 .slide {
@@ -630,6 +638,173 @@ header > nav {
 .about-margin-top {
   margin: 0;
 }
+
+/******************************
+		    Mission Divider
+*******************************/
+
+// .mission-divider {
+//   width: 100%;
+//   position: relative;
+//   padding: 0 3%;
+//   z-index: 4;
+//   margin-bottom: 5em;
+// }
+
+.mission-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  p {
+    font-size: 0.7em;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    color: $matt-grey;
+    min-width: 250px;
+    text-align: center;
+    line-height: 160%;
+    margin: 1.3em;
+  }
+}
+
+.mission-container:after {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  content: "";
+  width: 50%;
+  height: 4px;
+  background: $off-white;
+  border-radius: 20px;
+}
+
+/******************************
+		      Services
+*******************************/
+
+#Services {
+  background: $matt-grey;
+
+  .page-heading {
+    h2 {
+      color: $white;
+    }
+  }
+
+  .contentContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    justify-items: center;
+    align-items: center;
+    row-gap: 35px;
+  }
+}
+
+.service {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 250px;
+  color: $white;
+
+  img {
+    width: 15%;
+    // background: #aaa;
+  }
+
+  > div {
+    font-size: 0.5em;
+    margin-left: 1em;
+  }
+
+  h3 {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 600;
+    font-size: 1em;
+  }
+
+  p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 0.7em;
+    margin-top: 0.7em;
+    line-height: 150%;
+    color: $white;
+  }
+}
+
+.services-image {
+  width: 70%;
+  height: 190px;
+  background: #eee;
+}
+
+.service-goals {
+  li {
+    display: flex;
+    align-items: center;
+    margin: 0.4em;
+
+    img {
+      width: 32px;
+    }
+
+    h4 {
+      color: $white;
+      font-family: "Source Sans Pro", sans-serif;
+      font-weight: 500;
+      font-size: 0.5em;
+      margin-left: 1.3em;
+    }
+  }
+}
+
+// .goals-row {
+//   width: 100%;
+//   display: flex;
+//   justify-content: space-evenly;
+//   align-items: center;
+//   flex-wrap: wrap;
+// }
+
+// .service {
+//   width: 100%;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   min-width: 250px;
+
+//   img {
+//     width: 15%;
+//     background: #333;
+//   }
+
+//   > div {
+//     font-size: 0.5em;
+//     margin-left: 1em;
+//   }
+
+//   h3 {
+//     font-family: "Source Sans Pro", sans-serif;
+//     font-weight: 700;
+//     font-size: 1.1em;
+//   }
+
+//   p {
+//     font-family: "Roboto", sans-serif;
+//     font-weight: 300;
+//     font-size: 0.7em;
+//     margin-top: 0.6em;
+//     line-height: 140%;
+//   }
+// }
 
 /******************************
 		Experiences
