@@ -118,13 +118,23 @@
 
   .container {
     min-height: calc(100vh - 30px);
+    padding: 17% 0;
   }
 
-  // .bannerContent {
-  //   h1 {
-  //     font-size: 1.3em;
-  //   }
-  // }
+  .contentContainer {
+    padding-top: 14%;
+    padding-bottom: 3%;
+
+    p {
+      font-size: 0.53em;
+    }
+  }
+
+  .bannerContent {
+    p {
+      width: 80%;
+    }
+  }
 
   .experiences .description {
     padding: 7%;
@@ -142,6 +152,14 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+  }
+
+  .slide {
+    margin: 0 1.5%;
+  }
+
+  .carousel-container {
+    margin: 20px auto;
   }
 }
 //   footer {

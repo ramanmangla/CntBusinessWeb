@@ -26,13 +26,13 @@ $color-highlight: $purple;
 $color-navlinks: $white;
 $color-bullets: $matt-grey;
 $color-highlight-blue: $blue;
+$color-hover: $purple;
 
 $color-heading: $turquoise;
 $color-loading: $darker-blue;
 $color-border: $midnight-blue;
 $color-medialinks: $sky-blue;
 $color-bullets: $grey;
-$color-hover: $white;
 
 /******************************
 		Base Properties
@@ -47,7 +47,7 @@ html {
 
 body {
   /*Overscroll-behavior eliminates scroll bounce*/
-  /*overscroll-behavior: none;*/
+  overscroll-behavior: none;
   background: $color-background;
   margin: 0;
   // overflow: hidden;
@@ -89,7 +89,7 @@ a:visited {
   /*And to set set margin auto for centering horizontally*/
   max-width: 1000px;
   // min-height: 100vh;
-  width: 88%;
+  width: 93%;
   margin: auto;
   min-height: 100vh;
   /*Flex box to vertically center text div*/
@@ -102,8 +102,7 @@ a:visited {
   font-size: 2.5rem;
   position: relative;
   z-index: 5;
-  padding-top: 8%;
-  padding-bottom: 8%;
+  padding: 8% 0;
 
   > h2 {
     width: 100%;
@@ -122,14 +121,13 @@ a:visited {
   justify-content: center;
   align-items: center;
   // border-bottom: 1px solid $color-border;
-  padding-top: 10%;
-  padding-bottom: 2%;
+  padding: 10% 0;
   flex-wrap: wrap;
 
   p {
-    font-size: 0.47em;
+    font-size: 0.48em;
     color: $color-text;
-    line-height: 1.4em;
+    line-height: 160%;
     margin-bottom: 20px;
   }
 }
@@ -141,8 +139,7 @@ a:visited {
 
 .bigColumn {
   max-width: 50%;
-  margin: 20px;
-  margin-top: 0;
+  margin: 0 10px 30px 10px;
   // max-width: 480px;
   text-align: justify;
   // margin: 4%;
@@ -163,7 +160,7 @@ a:visited {
   grid-gap: 2px 2px;
   background: $white;
   // width: 80%;
-  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.09);
   border-radius: 5px;
   padding: 5px;
 
@@ -227,9 +224,9 @@ p {
 
 .button {
   display: inline-block;
-  padding: 0.7em 1.3em !important;
+  padding: 0.6em 1.3em !important;
   font-family: "Roboto", sans-serif;
-  font-size: 0.4em;
+  font-size: 0.45em;
   font-weight: 300;
   border: 2px solid $color-button-border;
   border-radius: 45px;
@@ -254,7 +251,7 @@ p {
 
 .page-heading {
   h2 {
-    font-size: 1em;
+    font-size: 1.1em;
     font-family: "Source Sans Pro", sans-serif;
     font-weight: 700;
     text-align: center;
@@ -262,7 +259,7 @@ p {
   }
 
   p {
-    font-size: 0.35em;
+    font-size: 0.4em;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     text-align: center;
@@ -477,14 +474,14 @@ header > nav {
 
   h3,
   h1 {
-    font-family: "Playfair Display", serif;
-    font-weight: 400;
-    font-size: 0.6em;
+    font-family: "Source Sans Pro", serif;
+    font-weight: 600;
+    font-size: 0.65em;
   }
 
   h1 {
     font-weight: 700;
-    font-size: 1.05em;
+    font-size: 1.1em;
     margin-top: 0.5em;
     white-space: nowrap;
   }
@@ -492,9 +489,9 @@ header > nav {
   p {
     font-family: "Roboto", sans-serif;
     font-weight: 300;
-    font-size: 0.5em;
+    font-size: 0.55em;
     margin-top: 1.6em;
-    line-height: 126%;
+    line-height: 150%;
   }
 }
 
@@ -576,7 +573,7 @@ header > nav {
 }
 
 .slide {
-  margin: 0 1.1%;
+  margin: 0 1%;
 }
 
 .partner-image {
@@ -602,10 +599,11 @@ header > nav {
   li {
     position: relative;
     margin: 5px;
-    padding-left: 0.8em;
-    line-height: 1.2em;
+    padding-left: 0.6em;
+    line-height: 140%;
     font-size: 0.47em;
     font-weight: 500;
+    text-align: left;
   }
 
   li:before {
@@ -643,14 +641,6 @@ header > nav {
 		    Mission Divider
 *******************************/
 
-// .mission-divider {
-//   width: 100%;
-//   position: relative;
-//   padding: 0 3%;
-//   z-index: 4;
-//   margin-bottom: 5em;
-// }
-
 .mission-container {
   width: 100%;
   max-width: 1000px;
@@ -662,13 +652,14 @@ header > nav {
 
   p {
     font-size: 0.7em;
-    font-family: "Playfair Display", serif;
+    font-family: "Source Sans Pro", serif;
     font-weight: 700;
     color: $matt-grey;
     min-width: 250px;
     text-align: center;
     line-height: 160%;
-    margin: 1.3em;
+    margin: 0.6em;
+    margin-bottom: 27px;
   }
 }
 
