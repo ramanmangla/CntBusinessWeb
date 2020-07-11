@@ -890,9 +890,9 @@ header > nav {
   box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.15);
 }
 .project h3 {
-  font-size: 0.55em;
+  font-size: 0.64em;
   font-family: "Source Sans Pro", serif;
-  font-weight: 500;
+  font-weight: 600;
   color: #8b26c2;
   align-self: flex-start;
 }
@@ -911,7 +911,7 @@ header > nav {
   font-size: 0.4em;
   line-height: 1.6em;
   margin-top: 1em;
-  text-align: left;
+  text-align: justify;
 }
 .project > div {
   width: 100%;
@@ -1140,7 +1140,7 @@ footer a {
   }
 
   #Services .contentContainer {
-    width: 70%;
+    width: 80%;
   }
 
   .project {
