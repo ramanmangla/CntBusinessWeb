@@ -223,14 +223,14 @@ a:visited {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10% 0;
+  padding: 5% 0;
   flex-wrap: wrap;
 }
 .contentContainer p {
-  font-size: 0.48em;
+  font-size: 0.43em;
+  font-weight: 400;
   color: #222;
-  line-height: 160%;
-  margin-bottom: 20px;
+  line-height: 175%;
 }
 
 .leftColumn {
@@ -262,6 +262,7 @@ a:visited {
   padding: 5px;
 }
 .info-grid > div {
+  position: relative;
   background: #ffffff;
   display: flex;
   justify-content: center;
@@ -325,9 +326,12 @@ p {
 
 .wrap-rev {
   flex-wrap: wrap-reverse;
-  padding-top: 7%;
+  padding-top: 0;
 }
 
+.page-heading {
+  margin-bottom: 4%;
+}
 .page-heading h2 {
   font-size: 1.1em;
   font-family: "Source Sans Pro", sans-serif;
@@ -350,6 +354,11 @@ p {
 
 .color-highlight-blue {
   color: #13649f;
+}
+
+.bold-highlight-blue {
+  color: #13649f;
+  font-weight: 500;
 }
 
 /******************************
@@ -588,7 +597,7 @@ header > nav {
   margin: 5px;
   padding-left: 0.6em;
   line-height: 140%;
-  font-size: 0.47em;
+  font-size: 0.49em;
   font-weight: 500;
   text-align: left;
 }
@@ -604,13 +613,21 @@ header > nav {
   margin-top: 0 !important;
 }
 
-.about-carousel-awards {
-  width: 80%;
-  background: #aaa;
-  height: 140px;
+.award-section {
+  padding: 1.2em;
 }
-.about-carousel-awards img {
-  width: 50px;
+.award-section > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.award-section img {
+  width: 100%;
+}
+.award-section p {
+  font-size: 0.46em;
+  margin-top: 0.7em;
+  text-align: center;
 }
 
 .about-margin-top {
@@ -630,7 +647,7 @@ header > nav {
   position: relative;
 }
 .mission-container p {
-  font-size: 0.7em;
+  font-size: 0.65em;
   font-family: "Source Sans Pro", serif;
   font-weight: 700;
   color: #222;
@@ -656,20 +673,6 @@ header > nav {
 /******************************
 		      Services
 *******************************/
-#Services {
-  background: #222;
-}
-#Services .page-heading h2 {
-  color: #ffffff;
-}
-#Services .contentContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  justify-items: center;
-  align-items: center;
-  row-gap: 35px;
-}
-
 .service {
   width: 90%;
   display: flex;
@@ -679,24 +682,25 @@ header > nav {
   color: #ffffff;
 }
 .service img {
-  width: 15%;
+  width: 12%;
 }
 .service > div {
   font-size: 0.5em;
-  margin-left: 1em;
+  margin-left: 1.2em;
 }
 .service h3 {
   font-family: "Source Sans Pro", sans-serif;
-  font-weight: 600;
-  font-size: 1em;
+  font-weight: 500;
+  font-size: 1.05em;
 }
 .service p {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
-  font-size: 0.7em;
+  font-size: 0.82em;
   margin-top: 0.7em;
   line-height: 150%;
   color: #ffffff;
+  text-align: justify;
 }
 
 .services-image {
@@ -708,7 +712,7 @@ header > nav {
 .service-goals li {
   display: flex;
   align-items: center;
-  margin: 0.4em;
+  margin: 0.5em;
 }
 .service-goals li img {
   width: 32px;
@@ -717,7 +721,7 @@ header > nav {
   color: #ffffff;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 500;
-  font-size: 0.5em;
+  font-size: 0.55em;
   margin-left: 1.3em;
 }
 
@@ -825,24 +829,39 @@ header > nav {
 /******************************
 			Projects
 *******************************/
-#Projects .container {
+#Services::before {
+  width: 140%;
+  height: 700px;
+  background: #fff;
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  content: "";
+  display: block;
+  transform: rotate(-8deg) translate(-50%, -50%);
+}
+
+#Services {
+  background: #8b26c2;
+}
+#Services .container {
   min-height: 100vh;
   padding: 40px 0;
 }
-#Projects .container > p {
+#Services .container > p {
   margin-top: 2.2em;
   font-size: 0.5em;
   color: #222;
   text-align: center;
   line-height: 1.4em;
 }
-#Projects .container > p > a {
+#Services .container > p > a {
   color: #64ffda;
 }
-#Projects .container > p > a:hover {
+#Services .container > p > a:hover {
   color: #47cff9 !important;
 }
-#Projects .contentContainer {
+#Services .contentContainer {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -850,30 +869,32 @@ header > nav {
   grid-gap: 30px 30px;
   border: 0;
 }
-#Projects a {
+#Services a {
   line-height: 0;
 }
 
 .project {
   position: relative;
-  border: 1px solid #112c4c;
+  border: 1px solid #ddd;
   transition: 1s;
   width: 100%;
-  height: 325px;
+  height: 360px;
   min-height: 200px;
   margin: auto;
-  padding: 40px 20px;
+  padding: 30px 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background: rgba(0, 0, 0, 0.15);
-  box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.25);
+  background: #fff;
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.15);
 }
 .project h3 {
-  font-size: 0.6em;
-  font-family: "Overpass";
-  color: #64ffda;
+  font-size: 0.55em;
+  font-family: "Source Sans Pro", serif;
+  font-weight: 500;
+  color: #8b26c2;
+  align-self: flex-start;
 }
 .project ul {
   max-width: 80%;
@@ -889,11 +910,27 @@ header > nav {
 .project p {
   font-size: 0.4em;
   line-height: 1.6em;
-  margin-top: 1.7em;
+  margin-top: 1em;
   text-align: left;
 }
 .project > div {
   width: 100%;
+}
+.project a {
+  color: #13649f;
+  text-decoration: underline;
+}
+
+.project-image {
+  margin-top: 0.8em;
+  width: 100%;
+  height: 120px;
+  background: #333;
+}
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
 }
 
 .projectTech {
@@ -1091,7 +1128,7 @@ footer a {
     padding-bottom: 3%;
   }
   .contentContainer p {
-    font-size: 0.53em;
+    font-size: 0.48em;
   }
 
   .bannerContent p {
@@ -1102,11 +1139,12 @@ footer a {
     padding: 7%;
   }
 
-  .project {
-    height: 250px;
+  #Services .contentContainer {
+    width: 70%;
   }
-  .project p {
-    padding-right: 30px;
+
+  .project {
+    height: 320px;
   }
 
   .about-areas-list {

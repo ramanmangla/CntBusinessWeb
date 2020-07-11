@@ -49,7 +49,7 @@ $("header nav a").on("click", function (e) {
 
   $("html, body").animate(
     {
-      scrollTop: $(targetHref).offset().top - 25,
+      scrollTop: $(targetHref).offset().top - 20,
     },
     1000
   );
