@@ -163,6 +163,13 @@
   .carousel-container {
     margin: 20px auto;
   }
+
+  #Partners {
+    .contentContainer {
+      grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+      grid-gap: 30px 30px;
+    }
+  }
 }
 //   footer {
 //     .mediaLinks {

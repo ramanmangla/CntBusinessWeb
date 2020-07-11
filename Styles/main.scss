@@ -934,7 +934,7 @@ header > nav {
   background: $turquoise;
 }
 /******************************
-			Projects
+			Services
 *******************************/
 
 #Services::before {
@@ -1080,6 +1080,61 @@ header > nav {
 
   .fa-github:hover {
     color: $turquoise;
+  }
+}
+
+/******************************
+          Partners
+*******************************/
+
+#Partners {
+  // background: $purple;
+
+  // .page-heading {
+  //   color: #fff;
+  // }
+
+  .container {
+    min-height: 100vh;
+    padding: 40px 0;
+
+    > p {
+      margin-top: 2.2em;
+      font-size: 0.5em;
+      color: $color-text;
+      text-align: center;
+      line-height: 1.4em;
+
+      > a {
+        color: $turquoise;
+      }
+
+      > a:hover {
+        color: $sky-blue !important;
+      }
+    }
+  }
+
+  .contentContainer {
+    width: 100%;
+    margin-top: 7%;
+    background: #fff;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    position: relative;
+    grid-gap: 40px 40px;
+    border: 0;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.09);
+
+    > div {
+      width: 90%;
+    }
+  }
+
+  a {
+    line-height: 0;
   }
 }
 
